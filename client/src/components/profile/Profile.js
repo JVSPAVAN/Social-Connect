@@ -11,6 +11,11 @@ import { getProfileByHandle } from "../../actions/profileActions";
 
 class Profile extends Component {
   componentDidMount() {
+    /* console.log(window.innerHeight);
+    console.log(window.innerWidth);
+    if (window.innerWidth < 700) {
+      console.log("please maximise ur window");
+    } */
     if (this.props.match.params.handle) {
       this.props.getProfileByHandle(this.props.match.params.handle);
     }
@@ -18,6 +23,10 @@ class Profile extends Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.profile.profile === null && this.props.profile.loading) {
+      this.props.history.push("/not-found");
+    }
+    if (window.outerWidth <= 786) {
+      console.log("please maximise ur window");
       this.props.history.push("/not-found");
     }
   }
