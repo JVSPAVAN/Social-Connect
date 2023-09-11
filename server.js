@@ -14,7 +14,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 //config db
-const db = require("./config/keys").mongoURI;
+//const db = require("./config/keys").mongoURI;
+const db = "mongodb+srv://saiii:jvs<3gag@clustersaiii.iacxx.mongodb.net/stores?retryWrites=true&w=majority";
 
 //mongodb connection
 mongoose
